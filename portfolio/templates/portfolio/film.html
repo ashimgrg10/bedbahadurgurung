@@ -49,7 +49,7 @@
     </div>
     <div class="row g-4">
       {% for movie in movies %}
-      <div class="col-6 col-md-4 col-lg-3 fade-in-up">
+      <div class="col-12 col-md-4 col-lg-3 fade-in-up">
         <div class="card-official">
           <div class="movie-poster-wrap film-media-card">
             <img src="{% static movie.poster %}" alt="{{ movie.title }} poster">
@@ -78,7 +78,7 @@
     </div>
     <div class="row g-4">
       {% for song in songs_written %}
-      <div class="col-6 col-md-4 col-lg-3 fade-in-up song-card">
+      <div class="col-12 col-md-4 col-lg-3 fade-in-up song-card">
         <div class="card-official">
           <div class="movie-poster-wrap film-media-card song-thumb-wrap">
             <img src="{% static song.thumbnail %}" alt="{{ song.title }} thumbnail">
@@ -110,7 +110,7 @@
     </div>
     <div class="row g-4">
       {% for song in songs_performed %}
-      <div class="col-6 col-md-4 col-lg-3 fade-in-up song-card">
+      <div class="col-12 col-md-4 col-lg-3 fade-in-up song-card">
         <div class="card-official">
           <div class="movie-poster-wrap film-media-card song-thumb-wrap">
             <img src="{% static song.thumbnail %}" alt="{{ song.title }} thumbnail">
