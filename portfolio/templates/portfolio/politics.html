@@ -1,0 +1,72 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Public Service</span>
+    <h1 class="section-title">Politics</h1>
+    <p class="hero-subtitle mx-auto">Local governance and provincial representation</p>
+  </div>
+</header>
+
+<!-- ==================== POSITIONS ==================== -->
+<section>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      {% for position in positions %}
+      <div class="col-md-5 fade-in-up">
+        <div class="card-official position-card">
+          <div class="position-icon"><i class="bi {{ position.icon }}"></i></div>
+          <h4 class="mb-1">{{ position.role }}</h4>
+          <p class="mb-2 fw-semibold" style="color: var(--color-blue);">{{ position.body }}</p>
+          <p class="text-muted-custom mb-0">{{ position.term }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MINISTERIAL RESPONSIBILITIES ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center fade-in-up">
+        <span class="eyebrow d-inline-flex">Ministerial Responsibilities</span>
+        <h2 class="section-title">Served Twice as Minister</h2>
+        <p class="text-muted-custom mb-4">
+          Bed Bahadur Gurung has twice held ministerial responsibility across the
+          following portfolios:
+        </p>
+        <div>
+          {% for ministry in ministries %}
+          <span class="ministry-chip"><i class="bi bi-award-fill"></i> {{ ministry }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== POLITICAL TIMELINE ==================== -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">Career Timeline</span>
+      <h2 class="section-title">Political Career</h2>
+    </div>
+    <div class="timeline">
+      {% for item in political_timeline %}
+      <div class="timeline-item fade-in-up {% if forloop.last %}is-current{% endif %}">
+        <div class="timeline-icon"><i class="bi bi-flag-fill"></i></div>
+        <div class="timeline-year">{{ item.year }}</div>
+        <div class="timeline-card">
+          <p class="mb-0 text-muted-custom">{{ item.text }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

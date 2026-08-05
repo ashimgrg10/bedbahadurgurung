@@ -1,0 +1,107 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ==================== HERO / COUNTDOWN BANNER ==================== -->
+<section class="hero-banner text-center">
+  <div class="container position-relative">
+    <div class="hero-eyebrow">Term of Office</div>
+    <h1>Member of Gandaki Province Assembly</h1>
+    <p class="hero-subtitle">Serving from {{ term_start_bs }} until {{ term_end_bs }}</p>
+
+    <div class="term-seal-row row justify-content-center g-3" id="term-countdown" data-end-date="{{ term_end_iso }}">
+      <div class="col-4 col-md-3">
+        <div class="term-seal">
+          <div class="seal-ring"><span id="countdown-years">00</span></div>
+          <div class="seal-label">Years Remaining</div>
+        </div>
+      </div>
+      <div class="col-4 col-md-3">
+        <div class="term-seal">
+          <div class="seal-ring"><span id="countdown-months">00</span></div>
+          <div class="seal-label">Months Remaining</div>
+        </div>
+      </div>
+      <div class="col-4 col-md-3">
+        <div class="term-seal">
+          <div class="seal-ring"><span id="countdown-days">00</span></div>
+          <div class="seal-label">Days Remaining</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="term-dates">Current term: <strong>{{ term_start_bs }}</strong> &mdash; <strong>{{ term_end_bs }}</strong></p>
+  </div>
+</section>
+
+<!-- ==================== HERO PROFILE INTRO ==================== -->
+<section>
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 text-center fade-in-up">
+        <div class="profile-frame">
+          <img src="{% static 'images/profile/profile.jpg' %}" alt="Portrait of Bed Bahadur Gurung" class="profile-portrait">
+        </div>
+      </div>
+      <div class="col-lg-7 fade-in-up">
+        <p class="role-line mb-2">Politician &bull; Film Director &bull; Writer &bull; Actor</p>
+        <h2 class="intro-name">Bed Bahadur Gurung</h2>
+        <p class="lead text-muted-custom">
+          A public servant and storyteller devoted to the people of Madi and the wider
+          Gandaki Province.
+        </p>
+        <p class="text-muted-custom">
+          From leading local government as Chairman of Madi Rural Municipality to
+          representing constituents in the Gandaki Province Assembly, Bed Bahadur
+          Gurung has built a career grounded in public service. Alongside his political
+          work, he has shaped Nepali cinema as an actor, writer, and director — leading
+          Abhiyan Film Production and using storytelling as a tool for social awareness
+          and community upliftment.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{% url 'portfolio:journey' %}" class="btn-official-primary">My Journey</a>
+          <a href="{% url 'portfolio:contact' %}" class="btn-official-outline">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUICK HIGHLIGHTS ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">At a Glance</span>
+      <h2 class="section-title">A Career of Service &amp; Storytelling</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 fade-in-up">
+        <div class="card-official text-center p-4">
+          <div class="position-icon mx-auto"><i class="bi bi-bank2"></i></div>
+          <h5 class="mt-3">Provincial Leadership</h5>
+          <p class="text-muted-custom mb-0">Serving as Member of the Gandaki Province Assembly since 2079 B.S.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-in-up">
+        <div class="card-official text-center p-4">
+          <div class="position-icon mx-auto"><i class="bi bi-building-fill"></i></div>
+          <h5 class="mt-3">Local Governance</h5>
+          <p class="text-muted-custom mb-0">Former Chairman of Madi Rural Municipality, 2074&ndash;2079 B.S.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-in-up">
+        <div class="card-official text-center p-4">
+          <div class="position-icon mx-auto"><i class="bi bi-film"></i></div>
+          <h5 class="mt-3">Film &amp; Storytelling</h5>
+          <p class="text-muted-custom mb-0">Head of Abhiyan Film Production; director, writer, and actor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/countdown.js' %}"></script>
+{% endblock %}

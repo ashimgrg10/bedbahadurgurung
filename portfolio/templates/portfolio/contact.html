@@ -1,0 +1,84 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Let's Connect</span>
+    <h1 class="section-title">Contact</h1>
+    <p class="hero-subtitle mx-auto">Reach out with questions, feedback, or invitations</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-lg-7 fade-in-up">
+        <div class="card-official contact-form-card">
+          <h4 class="mb-4">Send a Message</h4>
+          <!-- Frontend-only form: no backend/processing wired up yet -->
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control form-control-official" id="fullName" name="fullName" placeholder="Your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control form-control-official" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control form-control-official" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+            <div id="contactFormFeedback" class="alert alert-info d-none" role="alert"></div>
+            <button type="submit" class="btn-official-primary">
+              <i class="bi bi-send-fill me-1"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-5 fade-in-up">
+        <div class="d-flex flex-column gap-3">
+          <div class="card-official contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <h6 class="mb-1">Address</h6>
+              <p class="text-muted-custom mb-0 small">{{ contact_details.address }}</p>
+            </div>
+          </div>
+          <div class="card-official contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <h6 class="mb-1">Phone</h6>
+              <p class="text-muted-custom mb-0 small">{{ contact_details.phone }}</p>
+            </div>
+          </div>
+          <div class="card-official contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <h6 class="mb-1">Email</h6>
+              <p class="text-muted-custom mb-0 small">{{ contact_details.email }}</p>
+            </div>
+          </div>
+          <div class="card-official contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-facebook"></i></div>
+            <div>
+              <h6 class="mb-1">Facebook</h6>
+              <a href="{{ contact_details.facebook }}" class="small">{{ contact_details.facebook }}</a>
+            </div>
+          </div>
+          <div class="card-official contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-instagram"></i></div>
+            <div>
+              <h6 class="mb-1">Instagram</h6>
+              <a href="{{ contact_details.Instagram }}" class="small">{{ contact_details.Instagram }}</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

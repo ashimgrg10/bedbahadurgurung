@@ -1,0 +1,135 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Cinema &amp; Storytelling</span>
+    <h1 class="section-title">Film</h1>
+    <p class="hero-subtitle mx-auto">Direction, performance, and music from Abhiyan Film Production</p>
+  </div>
+</header>
+
+<!-- ==================== UPCOMING FEATURE ==================== -->
+<section>
+  <div class="container">
+    <div class="fade-in-up">
+      <div class="upcoming-feature">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-4 poster-col film-media-card">
+            <img src="{% static upcoming_movie.poster %}" alt="{{ upcoming_movie.title }} poster">
+          </div>
+          <div class="col-md-8 p-4 p-lg-5 d-flex flex-column justify-content-center">
+            <span class="badge-upcoming mb-3">Upcoming</span>
+            <h2 class="text-white">{{ upcoming_movie.title }}</h2>
+            <p class="text-white-50">{{ upcoming_movie.description }}</p>
+            <div class="mb-3">
+              <span class="text-white-50 small d-block mb-1">Starring</span>
+              {% for actor in upcoming_movie.starring %}
+                <span class="starring-name">{{ actor }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ upcoming_movie.trailer_url }}" class="btn-official-primary align-self-start">
+              <i class="bi bi-play-fill me-1"></i> Watch Movie
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MOVIES GRID ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">Filmography</span>
+      <h2 class="section-title">Movies</h2>
+      <p class="section-intro mx-auto text-muted-custom">A selection of films featuring Bed Bahadur Gurung as actor and director.</p>
+    </div>
+    <div class="row g-4">
+      {% for movie in movies %}
+      <div class="col-6 col-md-4 col-lg-3 fade-in-up">
+        <div class="card-official">
+          <div class="movie-poster-wrap film-media-card">
+            <img src="{% static movie.poster %}" alt="{{ movie.title }} poster">
+          </div>
+          <div class="movie-card-body">
+            <h6 class="movie-title">{{ movie.title }}</h6>
+            <p class="movie-desc">{{ movie.description }}</p>
+            <a href="{{ movie.trailer_url }}" class="btn-official-outline btn-sm w-100 text-center">
+              <i class="bi bi-play-circle me-1"></i> Watch Movie
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SONGS WRITTEN / PRODUCED ==================== -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">Music</span>
+      <h2 class="section-title">Songs Written &amp; Produced</h2>
+      <p class="section-intro mx-auto text-muted-custom">A curated collection of songs connected to Bed Bahadur Gurung’s creative and cultural work.</p>
+    </div>
+    <div class="row g-4">
+      {% for song in songs_written %}
+      <div class="col-6 col-md-4 col-lg-3 fade-in-up song-card">
+        <div class="card-official">
+          <div class="movie-poster-wrap film-media-card song-thumb-wrap">
+            <img src="{% static song.thumbnail %}" alt="{{ song.title }} thumbnail">
+            <div class="song-play-btn">
+              <span class="play-circle"><i class="bi bi-play-fill"></i></span>
+            </div>
+          </div>
+          <div class="movie-card-body">
+            <h6 class="movie-title">{{ song.title }}</h6>
+            <p class="movie-desc">{{ song.description }}</p>
+            <a href="{{ song.watch_url }}" class="btn-official-outline btn-sm w-100 text-center">
+              <i class="bi bi-play-circle me-1"></i> Watch Song
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SONGS PERFORMED ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">On Screen</span>
+      <h2 class="section-title">Songs Performed</h2>
+      <p class="section-intro mx-auto text-muted-custom">Featured performances that can be expanded with official links and production details.</p>
+    </div>
+    <div class="row g-4">
+      {% for song in songs_performed %}
+      <div class="col-6 col-md-4 col-lg-3 fade-in-up song-card">
+        <div class="card-official">
+          <div class="movie-poster-wrap film-media-card song-thumb-wrap">
+            <img src="{% static song.thumbnail %}" alt="{{ song.title }} thumbnail">
+            <div class="song-play-btn">
+              <span class="play-circle"><i class="bi bi-camera-video-fill"></i></span>
+            </div>
+          </div>
+          <div class="movie-card-body">
+            <h6 class="movie-title">{{ song.title }}</h6>
+            <p class="movie-desc">{{ song.description }}</p>
+            <a href="{{ song.watch_url }}" class="btn-official-outline btn-sm w-100 text-center">
+              <i class="bi bi-play-circle me-1"></i> Watch Song
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

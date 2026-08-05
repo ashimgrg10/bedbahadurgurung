@@ -1,0 +1,67 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">The Path So Far</span>
+    <h1 class="section-title">My Journey</h1>
+    <p class="hero-subtitle mx-auto">From business and the stage to film and public office</p>
+  </div>
+</header>
+
+<section class="journey-section">
+  <div class="container">
+    <div class="journey-shell">
+      <div class="journey-story">
+        <div class="journey-story-card fade-in-up">
+          <span class="eyebrow">Biography & Leadership</span>
+          <h2 class="section-title">A life shaped by service, craft, and conviction</h2>
+          <p class="text-muted-custom">
+            Bed Bahadur Gurung’s story is rooted in discipline, artistic expression, and public service.
+            From humble beginnings in business to leadership in culture and government, each chapter reflects
+            a commitment to uplift people through work, creativity, and accountable leadership.
+          </p>
+          <div class="journey-highlights" aria-label="Journey highlights">
+            <span class="journey-highlight-pill">Business Journey</span>
+            <span class="journey-highlight-pill">Theatre Journey</span>
+            <span class="journey-highlight-pill">Film Journey</span>
+            <span class="journey-highlight-pill">Public Leadership</span>
+          </div>
+        </div>
+
+        <div class="timeline" aria-label="Milestones timeline">
+          {% for step in timeline %}
+          <div class="timeline-item fade-in-up {% if forloop.last %}is-current{% endif %}">
+            <div class="timeline-icon"><i class="bi {{ step.icon }}"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-badge">{{ step.year }}</div>
+              <h4 class="mb-2">{{ step.title }}</h4>
+              <p class="text-muted-custom mb-0">{{ step.description }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tinted">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center fade-in-up">
+        <span class="eyebrow d-inline-flex">Film Production</span>
+        <h2 class="section-title">Head of Abhiyan Film Production</h2>
+        <p class="text-muted-custom">
+          Alongside his political career, Bed Bahadur Gurung leads Abhiyan Film
+          Production, guiding films that bring Nepali stories, culture, and social
+          issues to the screen.
+        </p>
+        <a href="{% url 'portfolio:film' %}" class="btn-official-primary mt-2">Explore His Film Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

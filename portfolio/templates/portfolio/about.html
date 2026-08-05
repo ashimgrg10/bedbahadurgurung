@@ -1,0 +1,195 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Get to Know Him</span>
+    <h1 class="section-title">About Bed Bahadur Gurung</h1>
+  </div>
+</header>
+
+<!-- ==================== BIOGRAPHY ==================== -->
+<section>
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 text-center fade-in-up">
+        <img src="{% static 'images/profile/prof2.jpg' %}" alt="Bed Bahadur Gurung" class="profile-portrait">
+      </div>
+      <div class="col-lg-7 fade-in-up">
+        <span class="eyebrow">Biography</span>
+        <h2 class="section-title mb-3">A Life of Service, Leadership &amp; Storytelling</h2>
+        <p class="text-muted-custom">
+        म एउटा कलाकार, सर्जक र जनप्रतिनिधिका रूपमा समाजप्रति समर्पित यात्रामा निरन्तर अघि बढिरहेको व्यक्ति हुँ। अभिनय, चलचित्र निर्देशन र लेखनमार्फत समाजका कथा, भावना र यथार्थलाई प्रस्तुत गर्ने अवसर पाएँ। कलाले मलाई मानिसको पीडा, सपना र सम्भावनालाई नजिकबाट बुझ्न सिकायो भने सिर्जनशीलताले चुनौतीहरूलाई नयाँ दृष्टिकोणबाट हेर्ने आत्मविश्वास दियो।
+
+सार्वजनिक जीवनप्रतिको मेरो रुचिले राजनीतिमा प्रवेश गरायो। जनताको विश्वासका आधारमा नगरपालिका अध्यक्षको जिम्मेवारी सम्हाल्ने अवसर पाएँ। त्यस अवधिमा सुशासन, पारदर्शिता, पूर्वाधार विकास, शिक्षा, स्वास्थ्य, वातावरण संरक्षण र जनसहभागितालाई प्राथमिकतामा राखेर काम गर्ने प्रयास गरेँ। स्थानीय सरकार जनताको सबैभन्दा नजिकको सरकार भएकाले प्रत्येक निर्णय नागरिकको आवश्यकतासँग जोडिनुपर्छ भन्ने मान्यतामा मैले काम गरेँ।
+
+पछि दुई पटक मन्त्रीको जिम्मेवारी वहन गर्ने अवसर प्राप्त भयो। मन्त्रीका रूपमा नीति निर्माण, सेवा प्रवाहमा सुधार, संस्थागत क्षमता अभिवृद्धि र विकासका कार्यक्रमलाई प्रभावकारी रूपमा कार्यान्वयन गर्न ध्यान केन्द्रित गरेँ। पदलाई अधिकारको रूपमा होइन, जनताको विश्वास र जिम्मेवारीका रूपमा लिने मेरो सिद्धान्त सधैं कायम रह्यो।
+        </p>
+        <p class="text-muted-custom mb-4">
+          हाल म संघीय संसद्को सदस्यका रूपमा जनताको आवाज संसद्मा पुर्‍याउने, प्रभावकारी नीति निर्माण गर्ने र राष्ट्रको समृद्धिका लागि काम गर्ने जिम्मेवारी निर्वाह गरिरहेको छु। मेरो विश्वास छ कि लोकतन्त्र तब मात्र बलियो हुन्छ, जब नेतृत्व इमानदार, जवाफदेही, दूरदर्शी र जनताप्रति उत्तरदायी हुन्छ।
+
+मेरो सम्पूर्ण यात्राको आधार चार मूल मूल्यहरू हुन्—इमानदारी, सेवा, सिर्जनशीलता र जवाफदेहिता। कलाकारका रूपमा सिर्जनशीलता, लेखकका रूपमा विचार, निर्देशकका रूपमा नेतृत्व र राजनीतिज्ञका रूपमा सेवाभावलाई एकसाथ अघि बढाउँदै समाजमा सकारात्मक परिवर्तन ल्याउनु नै मेरो जीवनको उद्देश्य हो। पद र जिम्मेवारी परिवर्तन हुन सक्छन्, तर जनताको विश्वास, राष्ट्रप्रतिको समर्पण र विकासप्रतिको प्रतिबद्धता कहिल्यै परिवर्तन हुँदैन।
+        </p>
+        <div>
+          {% for role in roles %}
+          <span class="role-pill">{{ role }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MISSION / VISION ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 fade-in-up">
+        <div class="card-official p-4 h-100">
+          <div class="position-icon mb-3"><i class="bi bi-bullseye"></i></div>
+          <h4>Mission</h4>
+          <p class="text-muted-custom mb-0">
+            इमानदारी, सेवा, सिर्जनशीलता र जवाफदेहितालाई नेतृत्वको आधार बनाएर जनताको विश्वास जित्दै पारदर्शी, प्रभावकारी र परिणाममुखी शासन प्रदान गर्नु। स्थानीयदेखि राष्ट्रिय तहसम्म पूर्वाधार विकास, शिक्षा, स्वास्थ्य, कृषि, पर्यटन, उद्यमशीलता, डिजिटल प्रविधि, युवा सशक्तीकरण र कला–संस्कृतिको प्रवर्द्धनमार्फत समावेशी र दिगो विकासलाई गति दिनु मेरो मिशन हो। प्रत्येक निर्णयमा जनहितलाई सर्वोच्च प्राथमिकता दिँदै नागरिक र सरकारबीच विश्वासको सम्बन्ध अझ बलियो बनाउने मेरो प्रतिबद्धता रहनेछ।
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 fade-in-up">
+        <div class="card-official p-4 h-100">
+          <div class="position-icon mb-3"><i class="bi bi-binoculars-fill"></i></div>
+          <h4>Vision</h4>
+          <p class="text-muted-custom mb-0">
+           समृद्ध, सुशासित, न्यायपूर्ण र सिर्जनशील नेपाल निर्माण गर्नु, जहाँ प्रत्येक नागरिकले समान अवसर, गुणस्तरीय शिक्षा, सहज स्वास्थ्य सेवा, सम्मानजनक रोजगारी र सुरक्षित भविष्य प्राप्त गर्न सकोस्। कला, संस्कृति, नवप्रवर्तन र सुशासनलाई राष्ट्रिय विकासको आधार बनाएर आगामी पुस्ताका लागि आत्मनिर्भर र समुन्नत राष्ट्र निर्माण गर्नु मेरो दीर्घकालीन दृष्टि हो।
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CORE VALUES ==================== -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">What Guides Him</span>
+      <h2 class="section-title">Core Values</h2>
+    </div>
+    <div class="row g-4">
+      {% for value in core_values %}
+      <div class="col-md-6 col-lg-3 fade-in-up">
+        <div class="card-official value-card">
+          <div class="value-index mb-2">{{ forloop.counter|stringformat:"02d" }}</div>
+          <h5>{{ value.title }}</h5>
+          <p class="text-muted-custom mb-0 small">{{ value.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAMILY MEMBERS ==================== -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5 fade-in-up">
+      <span class="eyebrow">Home &amp; Heart</span>
+      <h2 class="section-title">Family Members</h2>
+      <p class="text-muted-custom section-intro mx-auto mb-0">
+        A circle of love, guidance, and shared purpose that continues to shape his life.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/father.jpg' %}" alt="Photograph of Tek Shai Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Tek Shai Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Father</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/mother.jpg' %}" alt="Photograph of Kaviri Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Kaviri Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Mother</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/sirsova.jpg' %}" alt="Photograph of Sirshova Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Sirshova Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Wife</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/parifufu.jpg' %}" alt="Photograph of Pari Maya Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Pari Maya Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Elder Sister</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/hira.jpg' %}" alt="Photograph of Hira Devi Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Hira Devi Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Younger Sister</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/asmita.jpg' %}" alt="Photograph of Asmita Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Asmita Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">First Daughter</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/susmita.jpg' %}" alt="Photograph of Susmita Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Susmita Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Second Daughter</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 fade-in-up">
+        <div class="card-official family-card p-4 h-100 text-center">
+          <img src="{% static 'images/profile/asimm.jpg' %}" alt="Photograph of Ashim Gurung" class="family-avatar mb-3">
+          <h5 class="mb-2">Ashim Gurung</h5>
+          <p class="text-muted-custom mb-0 family-role">Son</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EDUCATION & ACHIEVEMENTS ==================== -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 fade-in-up">
+        <span class="eyebrow">Background</span>
+        <h3 class="section-title mb-4">Education</h3>
+        {% for item in education %}
+        <div class="d-flex align-items-start mb-3">
+          <i class="bi bi-mortarboard-fill me-3 mt-1" style="color: var(--color-blue); font-size: 1.3rem;"></i>
+          <div>
+            <h6 class="mb-0">{{ item.degree }}</h6>
+            <p class="text-muted-custom small mb-0">{{ item.institution }} &middot; {{ item.year }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <span class="eyebrow">Recognition</span>
+        <h3 class="section-title mb-4">Achievements</h3>
+        <ul class="list-unstyled">
+          {% for achievement in achievements %}
+          <li class="d-flex align-items-start mb-3">
+            <i class="bi bi-award-fill me-3 mt-1" style="color: var(--color-gold); font-size: 1.3rem;"></i>
+            <span class="text-muted-custom">{{ achievement }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
